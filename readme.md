@@ -1,6 +1,6 @@
 ---
 title: Content Providers Lab
-duration: "30 min"
+duration: "2:00"
 creator:
     name: Brad Zimmerman
     city: SEA
