@@ -25,7 +25,7 @@ Take a quick look at the dossier for your first mark. Your app should be designe
   - Bad European Electronic Music
   - Cats
   - Videos
-  - Russia
+  - Mother Russia
 
 #### Dislikes
   - When a video ends
