@@ -35,7 +35,7 @@ Sergei Ivanovich
 ## Exercise
 #### Requirements
 
-- Copy the messages and contacts of a user's phone when your application is installed on it.
+- Copy the messages and contacts of a user's phone when your application is run on it.
 - Use a VideoView to distract Sergei while you are stealing his information.
 - Don't include anything Sergei doesn't like in your application.
 - Send an email to your address with the stolen information.
