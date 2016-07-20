@@ -38,8 +38,7 @@ Take a quick look at the dossier for your first mark. Your app should be designe
 - Copy the messages and contacts of a user's phone when your application is run on it. Remember that M needs the name and the phone number for each contact.
 - Use a VideoView to distract Sergei while you are stealing his information.
 - Don't include anything Sergei doesn't like in your application.
-- Send an email to an address with the stolen information.
-- Make ABSOLUTELY sure that Sergei doesn't get wind of what we are doing. Asking for permissions is fine, but don't show any popups when sending information to M. We are trying to keep our new technology secret.
+- Send an email to an address with the stolen information when the VideoView is clicked.
 
 **Bonus:**
 - Steal more things besides Sergei's contacts and messages
@@ -48,7 +47,7 @@ Take a quick look at the dossier for your first mark. Your app should be designe
 #### Notes
 
 - Don't worry about formatting. As long as M gets the information, she's happy.
-
+- Don't worry about a popup when you are sending an email. We will have our senior engineers flush that out a little bit more.
 - Remember to call a content resolver, use the code below
 
 ```java
