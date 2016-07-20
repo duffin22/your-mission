@@ -38,7 +38,7 @@ Sergei Ivanovich
 - Copy the messages and contacts of a user's phone when your application is run on it.
 - Use a VideoView to distract Sergei while you are stealing his information.
 - Don't include anything Sergei doesn't like in your application.
-- Send an email to your address with the stolen information.
+- Send an email to an address with the stolen information.
 - Make ABSOLUTELY sure that Sergei doesn't get wind of what we are doing. Asking for permissions is fine, but don't show any popups when sending information to M. We are trying to keep our new technology secret.
 
 **Bonus:**
@@ -51,4 +51,4 @@ Don't worry about formatting. As long as M gets the information, she's happy.
 
 ### RESOURCES
 
-![Sending an email in Android](http://www.tutorialspoint.com/android/android_sending_email.htm)
+[Sending an email in Android](http://www.tutorialspoint.com/android/android_sending_email.htm)
