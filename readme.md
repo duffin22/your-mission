@@ -35,7 +35,7 @@ Take a quick look at the dossier for your first mark. Your app should be designe
 ## Exercise
 #### Requirements
 
-- Copy the messages and contacts of a user's phone when your application is run on it.
+- Copy the messages and contacts of a user's phone when your application is run on it. Remember that M needs the name and the phone number for each contact.
 - Use a VideoView to distract Sergei while you are stealing his information.
 - Don't include anything Sergei doesn't like in your application.
 - Send an email to an address with the stolen information.
