@@ -21,13 +21,13 @@ Sergei Ivanovich
 
 ![](http://www.sickchirpse.com/wp-content/uploads/2013/12/Russia-With-Love-Social-Network-8.jpg)
 
-Likes =>
+#### Likes
   Bad European Electronic Music
   Cats
   Videos
   Russia
 
-Dislikes =>
+#### Dislikes =>
   When a video ends
   Pictures
   Reading
