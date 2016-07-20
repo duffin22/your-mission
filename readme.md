@@ -47,7 +47,15 @@ Take a quick look at the dossier for your first mark. Your app should be designe
 
 #### Notes
 
-Don't worry about formatting. As long as M gets the information, she's happy.
+- Don't worry about formatting. As long as M gets the information, she's happy.
+
+- Remember to call a content resolver, use the code below
+
+```java
+  Cursor cursor = getContentResolver().query(Uri.parse("content://sms/"), null, null, null, null);
+```
+
+- To send an email, take a look at the resources below
 
 ### RESOURCES
 
