@@ -17,7 +17,7 @@ Take a quick look at the dossier for your first mark. Your app should be designe
 
 ## Dossier
 
-Sergei Ivanovich
+### Sergei Ivanovich
 
 ![](http://www.sickchirpse.com/wp-content/uploads/2013/12/Russia-With-Love-Social-Network-8.jpg)
 
