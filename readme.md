@@ -27,7 +27,7 @@ Sergei Ivanovich
   Videos
   Russia
 
-#### Dislikes =>
+#### Dislikes
   When a video ends
   Pictures
   Reading
