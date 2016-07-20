@@ -43,7 +43,7 @@ public class SimpleAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        Log.d("SimpleAdapter: " , "Position: " + position);
+        //Log.d("SimpleAdapter: " , "Position: " + position);
 
         View v = convertView;
         TextView address, body, date, seen;

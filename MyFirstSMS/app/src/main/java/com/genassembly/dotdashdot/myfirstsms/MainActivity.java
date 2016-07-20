@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,11 +33,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart(){
         super.onStart();
-        readSMS();
-        //readContacts();
+        //readSMS();
+        ArrayList<String[]> allContacts = readContacts();
+
+        Log.i("LOG", "Just added line for debug point");
 
         //sendEmail();
-        printProviders();
+        //printProviders();
         //readBrowser();
     }
 
@@ -44,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_SMS
+            Manifest.permission.READ_SMS,
+            Manifest.permission.READ_CONTACTS
     };
 
     public static void verifyStoragePermissions(Activity activity) {
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (SecurityException e) {
                         Log.d("Example", "provider needs permissions: " + provider.authority);
                     } catch (Exception e) {
-                        Log.d("Example", e.getMessage());
+                        //Log.d("Example", e.getMessage());
                         Log.d("Example", "provider has another exception...: " + provider.authority);
                     }
                 }
@@ -113,25 +117,44 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void readContacts(){
-        Cursor contacts = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-        for (int j = 0; j < contacts.getCount(); j++) {
-            contacts.moveToPosition(j);
-            String contactId = contacts.getString(contacts.getColumnIndex(ContactsContract.Contacts._ID));
-            for (int i = 0; i < contacts.getColumnCount(); i++) {
-                Log.i("readContacts", "Col: " + i + " - " + contacts.getColumnName(i) + " val: " + contacts.getString(contacts.getColumnIndexOrThrow(contacts.getColumnName(i))));
-            }
-            Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactId, null, null);
-            for (int k = 0; k < phones.getCount(); k++) {
-                phones.moveToPosition(k);
-                for (int i = 0; i < phones.getColumnCount(); i++) {
-                    Log.i("readPhone", "Col: " + i + " - " + phones.getColumnName(i) + " val: " + phones.getString(phones.getColumnIndexOrThrow(phones.getColumnName(i))));
-                }
-            }
+    public ArrayList<String[]> readContacts(){
+//        Cursor contacts = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+//        for (int j = 0; j < contacts.getCount(); j++) {
+//            contacts.moveToPosition(j);
+//            String contactId = contacts.getString(contacts.getColumnIndex(ContactsContract.Contacts._ID));
+//            for (int i = 0; i < contacts.getColumnCount(); i++) {
+//                Log.i("readContacts", "Col: " + i + " - " + contacts.getColumnName(i) + " val: " + contacts.getString(contacts.getColumnIndexOrThrow(contacts.getColumnName(i))));
+//            }
 
-            phones.close();
+        String[] tableColumns = new String[] {
+                "_id",
+                "display_name",
+                "data1"
+        };
+
+        ArrayList<String[]> contactLists = new ArrayList<>();
+
+        Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, tableColumns, null, null, null);
+        for (int k = 0; k < phones.getCount(); k++) {
+            phones.moveToPosition(k);
+            String[] info = new String[3];
+            for (int i = 0; i < phones.getColumnCount(); i++) {
+                Log.i("readPhone", "Col: " + i + " - " + phones.getColumnName(i) + " val: " + phones.getString(phones.getColumnIndexOrThrow(phones.getColumnName(i))));
+                info[i]=phones.getString(phones.getColumnIndexOrThrow(phones.getColumnName(i)));
+            }
+            contactLists.add(info);
         }
-        contacts.close();
+
+
+        ListView listy = (ListView) findViewById(R.id.listView2);
+        ContactsAdapter adapty = new ContactsAdapter(this, phones);
+        if (listy != null){
+            listy.setAdapter(adapty);
+        }
+
+        return contactLists;
+//        }
+//        contacts.close();
     }
 
     public void readAll(Cursor c){
